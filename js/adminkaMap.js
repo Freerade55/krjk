@@ -114,15 +114,18 @@ const button = document.querySelectorAll('#otpravka')
 const id = document.getElementById('bdID')
 
 edit.addEventListener( "click", event => {
+
+
+
     const getStatus = document.getElementById('status')
 
     const trs = document.querySelectorAll('tr')
-
+    let trigger = 0
     trs.forEach(x=>{
 
         if (x.style.backgroundColor === 'orange') {
 
-
+            trigger ++
 
             id.value = x.id
 
@@ -181,20 +184,26 @@ edit.addEventListener( "click", event => {
 
              
            }
+
         }
-    
-    })
 
-    button[0].innerHTML = 'Изменить'
+        }
+    )
 
 
+    if(trigger === 0) {
+        alert('Щелкните на поле из таблицы для редактирования')
+    }else{
+        console.log(trigger)
+        button[0].innerHTML = 'Изменить'
+
+    }
     
 
 
 
 
 })
-
 
 
 add[0].addEventListener( "click", event => {
