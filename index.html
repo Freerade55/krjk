@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <title>mainPage</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/adminka_style.css">
+
+
+   
+</head>
+<body>
+
+
+    <div class="fixed">
+        <div class="map-nav">
+            <nav class="navbar">
+                <button id="main" class="navbar__reestr" href="#">РЕЕСТР ЗАЯВОК</button>
+            </nav>
+
+
+            <div id="map" style="width: 100%; height: 80%"></div>
+
+            <div class="navbar-bottom">
+               <a href="#" class="navbar-bottom__add" id="add">
+                    <img src="icons/plus-circle.svg" alt="add">
+               </a>
+               <a href="#" class="navbar-bottom__edit" id="edit">
+                    <img src="icons/pencil.svg" alt="edit">  
+               </a>
+            </div>
+        </div>
+
+
+
+        <div class="inputs">
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Номер заявки:</div>
+                <input class="inputs__input" id = 'nomerZayavki'></input>
+            </div>
+            <div class="inputs__wrapper">
+                <div class="inputs__text" >Дата заявки:</div>
+                <input class="inputs__input form-control" id = 'dataZayavki' type="text" readonly></input>
+            </div>
+            <div class="inputs__wrapper">
+                <div class="inputs__text" >Срок исполнения:</div>
+                <input class="inputs__input" id = 'srokIspolnenya'></input>
+            </div>
+        
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Исполнитель:</div>
+                <select class="inputs__select" id = "select">
+                    <option selected>Выберите Исполнителя</option>
+                </select>
+            </div>
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Объект:</div>
+                <input class="inputs__input" id = 'object'></input>
+            </div>
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Адрес:</div>
+                <input class="inputs__input" id = 'address' placeholder="двигайте метку на карте"></input>
+            </div>
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Задачи:</div>
+                <input class="inputs__input" id = 'zadachi'></input>
+            </div>
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Контакты:</div>
+                <input class="inputs__input" id = 'contacts'></input>
+            </div>
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Комментарии:</div>
+                <input class="inputs__input" id = 'comment'></input>
+            </div>
+
+
+            <div class="inputs__wrapper">
+                <div class="inputs__text">Инициатор заявки:</div>
+                <input class="inputs__input" id = 'initiator'></input>
+            </div>
+
+            <div class="inputs__status-wrapper">
+                <div class="inputs__text">Состояние:</div>
+                <div class="inputs__status" id="status">Не выполнено</div>
+                <input class="inputs__input" id = 'bdID' type='hidden'></input>
+
+            </div>
+
+            <button class="inputs__send" id = 'otpravka'>Отправить</button> 
+
+
+
+
+
+        </div>
+
+
+        
+        <div class="table-main">
+            <table class="table table-bordered">
+                <thead>
+                    <tr style="background-color: yellow;">
+                        <th scope="col">номер заявки</th>
+                        <th scope="col">дата заявки</th>
+                        <th scope="col">срок исполнения</th>
+                        <th scope="col">исполнитель</th>
+                        <th scope="col">цель</th>
+                        <th scope="col">адрес цели</th>
+                        <th scope="col">задачи</th>
+                        <th scope="col">контакты цели</th>
+                        <th scope="col">инициатор заявки</th>
+                        <th scope="col">комментарий к заявке</th>
+                        <th scope="col">состояние</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+
+        </div> 
+
+
+
+    </div>
+
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=18e0a04c-f1d7-4665-af58-499ad280cd46&lang=ru_RU" type="text/javascript"></script>
+<script src ="js/adminkaMap.js" type="module"></script>
+</body>
+</html>
